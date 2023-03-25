@@ -1,0 +1,32 @@
+{
+  "name": "asuoyeboah-sda",
+  "version": "1.0.0",
+  "description": "This is the official website for Asuoyeboah SDA Church.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-refresh server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbdanquah2/asuoyeboah-sda.git"
+  },
+  "keywords": [
+    "sda",
+    "church",
+    "asuoyeboah"
+  ],
+  "author": "John Danquah-Boateng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbdanquah2/asuoyeboah-sda/issues"
+  },
+  "homepage": "https://github.com/jbdanquah2/asuoyeboah-sda#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "browser-refresh": "^1.7.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
