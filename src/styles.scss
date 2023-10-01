@@ -1,0 +1,30 @@
+$primary-color: #327d68;
+$accent-color: #f5f5f5;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element width */
+}
+
+input, textarea, button, select {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body, h1, h2, h3, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  //height: 200vh !important;
+  font-family: Inter, sans-serif;
+}
+

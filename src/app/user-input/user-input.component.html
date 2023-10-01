@@ -1,0 +1,8 @@
+<h2>{{title}} List</h2>
+<ul>
+  <li *ngFor="let user of users">
+    <input type="checkbox" [checked]="user.selected" (change)="handleUserSelected(user)">
+    {{user.name}} ({{user.email}})
+    <button (click)="handleUserDeleted(user)">{{buttonLabel}}</button>
+  </li>
+</ul>

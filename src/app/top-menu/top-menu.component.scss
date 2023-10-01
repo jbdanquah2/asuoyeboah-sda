@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #2F557F;
+  font-family: 'Public Sans', sans-serif;
+  z-index: 99;
+
+  .navbar-brand {
+    img {
+      border-radius: 55%;
+    }
+  }
+
+  .collapse {
+    .navbar-nav, span {
+      color: #ffffff;
+      font-size: 1.1rem;
+      li a {
+        color: #ffffff;
+        font-size: 15px;
+        padding: 0 35px;
+      }
+    }
+  }
+
+}
