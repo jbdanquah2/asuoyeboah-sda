@@ -1,6 +1,6 @@
 $primary-color: #327d68;
 $accent-color: #f5f5f5;
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 * {
   margin: 0;
@@ -24,7 +24,9 @@ a {
 }
 
 body {
-  //height: 200vh !important;
   font-family: Inter, sans-serif;
+  //background: rgba(126, 123, 123, 0.3);
+
+;
 }
 
