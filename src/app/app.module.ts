@@ -13,6 +13,9 @@ import { BibleQuotesComponent } from './bible-quotes/bible-quotes.component';
 import {NgOptimizedImage} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {BibleQuotesService} from "./services/bible-quotes.service";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environment/environment";
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import {BibleQuotesService} from "./services/bible-quotes.service";
   ],
     imports: [
       BrowserModule,
+      AngularFireModule.initializeApp(environment.firebase),
       AppRoutingModule,
       NgOptimizedImage,
       HttpClientModule

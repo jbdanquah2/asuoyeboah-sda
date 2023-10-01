@@ -30,7 +30,7 @@ export class BibleQuotesComponent implements OnInit {
             return;
          }
 
-         this.randomBibleQuote = data.length != 1 ? this.randomBibleQuote : data[0];
+         this.randomBibleQuote = data.length !== 1 ? this.randomBibleQuote : data[0];
        })
      )
      .subscribe()
