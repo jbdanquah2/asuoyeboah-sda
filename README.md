@@ -5,13 +5,11 @@ We will upgrade it to the latest version soon
 
 ## Node Version
 
-You'll need to install node version 16.16.0
-
-Then run npm install
+You'll need to install node version 16.16.0. Then run `npm install`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
