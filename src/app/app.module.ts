@@ -11,6 +11,8 @@ import { UserInputComponent } from './user-input/user-input.component';
 import { HomeComponent } from './home/home.component';
 import { BibleQuotesComponent } from './bible-quotes/bible-quotes.component';
 import {NgOptimizedImage} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
+import {BibleQuotesService} from "./services/bible-quotes.service";
 
 @NgModule({
   declarations: [
@@ -24,11 +26,12 @@ import {NgOptimizedImage} from "@angular/common";
     BibleQuotesComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage
+      BrowserModule,
+      AppRoutingModule,
+      NgOptimizedImage,
+      HttpClientModule
     ],
-  providers: [],
+  providers: [BibleQuotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
