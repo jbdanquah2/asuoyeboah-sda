@@ -7,7 +7,7 @@ import {BibleQuoteModel} from "../models/bible-quote.model";
 @Injectable()
 export class BibleQuotesService {
 
-  constructor(private http: HttpClient,) {
+  constructor(private http: HttpClient) {
   }
 
   getRandomBibleQuote(): Observable<BibleQuoteModel[]> {
