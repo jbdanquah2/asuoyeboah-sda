@@ -5,7 +5,7 @@ We will upgrade it to the latest version soon
 
 ## Node Version
 
-You'll need to install node version 16.16.0. Then run `npm install`
+You'll need to install node version 16.16.0. Then run `npm install` to install dependencies.
 
 ## Development server
 
