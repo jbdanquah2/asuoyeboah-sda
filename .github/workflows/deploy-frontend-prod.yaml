@@ -25,10 +25,9 @@ jobs:
           npm run build --configuration=production
       - run: echo "🚀 This job's status is ${{job.status}}..."
       - run: echo "Deploying the Frontend (static) to Firebase Hosting 🔥"
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TASKFLOWPROD }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASUOYEBOAH_SDA }}'
           channelId: live
           projectId: asuoyeboah-sda
