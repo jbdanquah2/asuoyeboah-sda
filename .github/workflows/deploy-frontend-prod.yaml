@@ -1,0 +1,34 @@
+name: 🛑Deploy🛑 Frontend to Production
+run-name: ${{ github.actor }} - Frontend Deployment to Production
+'on':
+  workflow_dispatch:
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Setting up node version."
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is runnning on a ${{runner.os}} server hosted by Github!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref}} and your repository is ${{ github.repository }}."
+      - name: Checkout the Respository code to deploy
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Listing  files in root of the repository
+        run: |
+          ls
+      - name: echo "Installing dependencies and building the Angular app for deployment"
+        run: |
+          npm i &&
+          npm run build --configuration=production
+      - run: echo "🚀 This job's status is ${{job.status}}..."
+      - run: echo "Deploying the Frontend (static) to Firebase Hosting 🔥"
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TASKFLOWPROD }}'
+          channelId: live
+          projectId: asuoyeboah-sda
