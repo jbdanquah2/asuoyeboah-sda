@@ -1,0 +1,30 @@
+.pastoral-msg {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+
+  card.pastor {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-body.image {
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+  .card-title {
+    text-align: center;
+  }
+  .card.msg .card-body .card-text {
+    padding: 20px 0;
+  }
+
+}
+.card {
+  border: 0;
+}

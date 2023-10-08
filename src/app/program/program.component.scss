@@ -1,51 +1,41 @@
+.card-p:nth-child(n) {
+  position: relative;
+  top: -120px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+.card-p:nth-child(1),
+.card-p:nth-child(2),
+.card-p:nth-child(3),
+.card-p:nth-child(4) {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .card-p:nth-child(1),
+  .card-p:nth-child(2),
+  .card-p:nth-child(3),
+  .card-p:nth-child(4) {
+    margin-right: 0px;
+  }
+}
+
+:host ::ng-deep .card-p:nth-child(2), .card-p:nth-child(4) {
+  border:  solid 2px #154472;
+  background-color: #ffffff;
+}
+
+
 .programs {
   position: relative;
-  margin-bottom: 300px;
+  margin-bottom: 80px;
+  border-bottom: solid 1px #e0e0e0;
+
+
   .display {
     display: flex;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .prev {
-    display: block;
-    position: absolute;
-    margin-left: 35%;
-    bottom: 50%;
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-      margin-left: 5%;
-    }
-  }
-  .next {
-    display: block;
-    position: absolute;
-    margin-left:  55%;
-    bottom: 50%;
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-      margin-left: 70%;
-    }
-  }
-  .material-symbols-outlined {
-    color: #fff;
-    cursor: pointer;
-    font-size: 44px;
-    font-weight: normal;
-    &:hover {
-      color: #8d95a1;
-    }
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-    }
-    @media (max-width: 360px) {
-      font-size: 2rem;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 

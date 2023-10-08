@@ -17,6 +17,8 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environment/environment";
 import {SymbolLoaderService} from "./services/google-symbols-loader.service";
+import { PastoralMessageComponent } from './pastoral-message/pastoral-message.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {SymbolLoaderService} from "./services/google-symbols-loader.service";
     ProgramCardComponent,
     UserInputComponent,
     HomeComponent,
-    BibleQuotesComponent
+    BibleQuotesComponent,
+    PastoralMessageComponent,
+    GalleryComponent
   ],
     imports: [
       BrowserModule,

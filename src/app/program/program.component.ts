@@ -9,43 +9,42 @@ export class ProgramComponent {
 
   events = [
     {
-      title: 'Sunday Worship',
-      date: 'October 10, 2023',
-      description: 'Join us for our weekly Sunday worship service.',
-      imageUrl: '../../assets/fotor_bird.jpg',
-      index: 0
-    },
-    {
-      title: 'Community Outreach',
+      title: 'Bible Study',
+      day: 'Every Sunday',
       date: 'October 15, 2023',
       description: 'Help us make a positive impact in the community.',
-      imageUrl: '../../assets/fotor_bird.jpg',
+      imageUrl: '../../assets/bg-1.png',
       index: 1
     },
     {
-      title: 'Youth Day Out',
-      date: 'October 15, 2023',
-      description: 'Help us make a positive impact in the community.',
-      imageUrl: '../../assets/fotor_bird.jpg'
+      title: 'Sabbath Worship',
+      day: 'Every Saturday',
+      date: 'October 10, 2023',
+      description: 'Join us for our weekly Sunday worship service.',
+      imageUrl: '../../assets/bg-2.png',
+      index: 0
     },
     {
-      title: 'Pathfinders Sabbath',
+      title: 'Prayer Service',
+      day: 'Every Wednesday',
       date: 'October 15, 2023',
       description: 'Help us make a positive impact in the community.',
-      imageUrl: '../../assets/fotor_bird.jpg'
+      imageUrl: '../../assets/bg-4.jpg'
     },
     {
-      title: 'Games',
+      title: 'Vesper Service',
+      day: 'Every Friday',
       date: 'October 15, 2023',
-      description: 'Help us make a positive impact in the community.',
-      imageUrl: '../../assets/fotor_bird.jpg'
+      description: "Let's join with the angels in singing praises and welcome the Sabbath",
+      imageUrl: '../../assets/bg-5.jpeg'
     },
-    {
-      title: 'Church Building works',
-      date: 'October 15, 2023',
-      description: 'Help us make a positive impact in the community.',
-      imageUrl: '../../assets/fotor_bird.jpg'
-    },
+    // {
+    //   title: 'Kwame weds Akosua',
+    //   day: 'Sunday',
+    //   date: 'October 15, 2023',
+    //   description: 'Help us make a positive impact in the community.',
+    //   imageUrl: '../../assets/fotor_bird.jpg'
+    // },
   ];
 
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BibleQuotesService} from "../services/bible-quotes.service";
-import {tap} from "rxjs";
+import {tap, timeInterval} from "rxjs";
 import {BibleQuoteModel} from "../models/bible-quote.model";
 
 
@@ -23,16 +23,19 @@ export class BibleQuotesComponent implements OnInit {
 
   ngOnInit() {
 
-   this.bibleService.getRandomBibleQuote()
-     .pipe(
-       tap (data => {
-         if (!data) {
-            return;
-         }
+    setInterval(() => {
+      this.bibleService.getRandomBibleQuote()
+        .pipe(
+          tap (data => {
+            if (!data) {
+               return;
+            }
 
-         this.randomBibleQuote = data.length !== 1 ? this.randomBibleQuote : data[0];
-       })
-     )
-     .subscribe()
+            this.randomBibleQuote = data.length !== 1 ? this.randomBibleQuote : data[0];
+          })
+        )
+        .subscribe()
+    }, 10000)
+
   }
 }

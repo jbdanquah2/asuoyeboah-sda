@@ -1,16 +1,18 @@
-<div class="bible-quotes">
-  <div class="quote-box">
-    <span class="quote">{{randomBibleQuote.text}} </span>
-    <span class="verse">
+<div class="quotes">
+  <div class="bible-quotes container">
+    <div class="quote-box">
+      <span [innerHTML]="randomBibleQuote.text" class="quote"></span>
+      <span class="verse">
       <a href="#" target="_blank">
         <span class="book"> {{randomBibleQuote.bookname}}</span>
-        <span class="chapter">{{randomBibleQuote.chapter}}:{{randomBibleQuote.verse}}</span>
+        <span class="chapter"> {{randomBibleQuote.chapter}}:{{randomBibleQuote.verse}}</span>
       </a>
     </span>
-  </div>
+    </div>
 
-<!--  <div class="quote-icon">-->
-<!--    <img src="../../assets/book.png">-->
-<!--&lt;!&ndash;    <span class="material-symbols-outlined">auto_stories</span>&ndash;&gt;-->
-<!--  </div>-->
+    <!--  <div class="quote-icon">-->
+    <!--    <img src="../../assets/book.png">-->
+    <!--&lt;!&ndash;    <span class="material-symbols-outlined">auto_stories</span>&ndash;&gt;-->
+    <!--  </div>-->
+  </div>
 </div>
