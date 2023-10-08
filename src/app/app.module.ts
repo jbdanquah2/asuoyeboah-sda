@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProgrammesComponent } from './programmes/programmes.component';
-import { ProgramsSectionComponent } from './programs-section/programs-section.component';
+import { ProgramComponent } from './program/program.component';
+import { ProgramCardComponent } from './program-card/program-card.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { HomeComponent } from './home/home.component';
 import { BibleQuotesComponent } from './bible-quotes/bible-quotes.component';
@@ -16,14 +16,15 @@ import {BibleQuotesService} from "./services/bible-quotes.service";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environment/environment";
+import {SymbolLoaderService} from "./services/google-symbols-loader.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     TopMenuComponent,
     FooterComponent,
-    ProgrammesComponent,
-    ProgramsSectionComponent,
+    ProgramComponent,
+    ProgramCardComponent,
     UserInputComponent,
     HomeComponent,
     BibleQuotesComponent
@@ -35,7 +36,7 @@ import {environment} from "../environment/environment";
       NgOptimizedImage,
       HttpClientModule
     ],
-  providers: [BibleQuotesService],
+  providers: [BibleQuotesService, SymbolLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

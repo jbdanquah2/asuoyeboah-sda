@@ -1,13 +1,10 @@
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  text-align: center;
+.footer {
+  background-color: #45526e;
+  margin: 0 auto;
 
-  button {
-    color: red;
-    margin: 0 auto;
 
+  .copyright {
+    background-color: #2F557F;
   }
 }
+

@@ -1,0 +1,17 @@
+.display-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  width: 450px;
+  margin-bottom: 50px;
+  margin-right: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+  .card img {
+    //width: 550px;
+    margin-bottom: 20px;
+  }
+}
+

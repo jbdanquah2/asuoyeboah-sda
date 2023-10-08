@@ -1,0 +1,53 @@
+.programs {
+  position: relative;
+  margin-bottom: 300px;
+  .display {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .prev {
+    display: block;
+    position: absolute;
+    margin-left: 35%;
+    bottom: 50%;
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-left: 5%;
+    }
+  }
+  .next {
+    display: block;
+    position: absolute;
+    margin-left:  55%;
+    bottom: 50%;
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-left: 70%;
+    }
+  }
+  .material-symbols-outlined {
+    color: #fff;
+    cursor: pointer;
+    font-size: 44px;
+    font-weight: normal;
+    &:hover {
+      color: #8d95a1;
+    }
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 360px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+
+

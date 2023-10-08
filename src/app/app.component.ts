@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SymbolLoaderService} from "./services/google-symbols-loader.service";
 
 @Component({
   selector: 'app-root',
@@ -8,22 +9,13 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'Asuoyeboa SDA';
 
-  users = [
-    { name: 'John Doe', email: 'john@example.com', selected: false },
-    { name: 'Jane Smith', email: 'jane@example.com', selected: false },
-    { name: 'Alice Johnson', email: 'alice@example.com', selected: false }
-  ];
 
-  constructor() {
+  constructor(public symbolLoaderService: SymbolLoaderService) {
   }
 
-  ngOnInit() { }
+  ngOnInit() {
 
-  onUserSelected(user:any) {
-    console.log('User selected: ', user);
   }
-  onDeletedUser(user:any) {
-    console.log('Deleted user: ', user);
-    this.users = this.users.filter(u => u.name !== user.name)
-  }
+
+
 }
