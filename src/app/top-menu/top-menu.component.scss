@@ -8,17 +8,38 @@
       border-radius: 55%;
     }
   }
-
-  .collapse {
-    .navbar-nav, span {
-      color: #ffffff;
-      font-size: 1.1rem;
-      li a {
-        color: #ffffff;
-        font-size: 15px;
-        padding: 0 35px;
-      }
+  .navbar-toggler {
+    color: #fff;
+    background-color: #f6f9fb;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    &:focus {
+      outline: none;
+    }
+    .navbar-toggler-icon {
+      color: #f6f9fb;
+      width: 20px;
     }
   }
+
+  //.collapse {
+    .navbar-nav, span {
+      color: #ffffff;
+      //font-size: 1.1rem;
+      li a {
+        color: #ffffff;
+        //font-size: 15px;
+        padding: 0 35px;
+        &:hover {
+          color: #f6f9fb;
+        }
+        @media (max-width: 768px) {
+          padding: 10px 5px
+        }
+      }
+    }
+  //}
 
 }
