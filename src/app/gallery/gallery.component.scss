@@ -111,3 +111,37 @@
   }
 }
 
+.image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .image-viewer img {
+    width: 90%;
+    height: 90%;
+  }
+  .prev-button, .next-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .prev-button:hover, .next-button:hover {
+    //z-index: 2;
+    background-color: #0056b3;
+  }
+}
+
+
+

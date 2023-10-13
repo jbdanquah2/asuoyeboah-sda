@@ -11,6 +11,9 @@ export class GalleryItemComponent {
   photo: any;
 
   @Input()
+  idx: number = 0;
+
+  @Input()
   photos: any;
 
 
@@ -19,4 +22,7 @@ export class GalleryItemComponent {
 
   }
 
+  openSlider() {
+
+  }
 }

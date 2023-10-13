@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
+
+  showImage: boolean = false;
+
+  photo: any;
+
+  idx: number = 0;
 
   photos: any[] = [
     {
@@ -178,4 +184,40 @@ export class GalleryComponent {
     },
   ]
 
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
+
+  toggleImageView(idx: number = 0, check: boolean = false) {
+
+    if (idx < 0) {
+       idx = this.photos.length - 1;
+    }
+    else if (idx >= this.photos.length - 1) {
+      idx = 0;
+    }
+
+    console.log('current idx:', idx);
+
+    this.photo = this.photos[idx];
+
+    console.log('current photo:', this.photo)
+
+    if (!check) {
+      this.showImage = !this.showImage;
+    }
+
+    this.idx = idx;
+  }
+
+  showPreviousImage() {
+    this.toggleImageView(this.idx-1, true);
+  }
+
+  showNextImage() {
+    this.toggleImageView(this.idx+1, true);
+  }
 }

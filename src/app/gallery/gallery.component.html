@@ -50,10 +50,19 @@
 <div class="photos">
   <div class="container">
     <div class="photos-container">
-      <ng-container  *ngFor="let photo of photos">
-        <gallery-item [photos]="photos" [photo]="photo"></gallery-item>
+      <ng-container  *ngFor="let photo of photos; let idx=index">
+        <gallery-item (click)="toggleImageView(idx)" [photo]="photo"></gallery-item>
       </ng-container>
     </div>
   </div>
 </div>
+
+<div class="image-viewer" *ngIf="showImage">
+  <img class="img-fluid" [src]="photo.imageUrl" alt="Image" (click)="toggleImageView()"/>
+  <div>
+    <button class="prev-button" (click)="showPreviousImage()">&#8249; Prev</button>
+    <button class="next-button" (click)="showNextImage()">Next &#8250;</button>
+  </div>
+</div>
+
 

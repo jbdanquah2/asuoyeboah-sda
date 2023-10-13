@@ -29,3 +29,20 @@ a {
 }
 
 
+.title h3 {
+
+  margin: 0;
+}
+
+/* Optional styling for additional decorative elements */
+.title::before,
+.title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #fff;
+  margin: 20px auto;
+}
+
+
