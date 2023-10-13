@@ -20,6 +20,8 @@ import {SymbolLoaderService} from "./services/google-symbols-loader.service";
 import { PastoralMessageComponent } from './pastoral-message/pastoral-message.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
+import { AdminComponent } from './admin/admin.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
     BibleQuotesComponent,
     PastoralMessageComponent,
     GalleryComponent,
-    GalleryItemComponent
+    GalleryItemComponent,
+    AdminComponent,
+    AboutUsComponent,
   ],
     imports: [
       BrowserModule,

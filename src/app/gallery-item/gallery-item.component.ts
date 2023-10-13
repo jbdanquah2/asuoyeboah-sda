@@ -7,7 +7,12 @@ import {Component, Input} from '@angular/core';
 })
 export class GalleryItemComponent {
 
-  @Input() photo: any;
+  @Input()
+  photo: any;
+
+  @Input()
+  photos: any;
+
 
 
   constructor() {

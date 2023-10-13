@@ -37,13 +37,23 @@
       </span>
     </div>
   </div>
-
 </div>
-<div class="container">
-  <div class="photos-container">
-    <ng-container  *ngFor="let photo of photos">
-      <gallery-item [photo]="photo"></gallery-item>
-    </ng-container>
+<div class="container photo-quote">
+  <div>
+    <span class="fa-photo-video"></span>
+    <span>
+    Memory is a way of holding onto the things you love, the things you are, the things you never want to lose
+    and a phoyography is a story that can be understood without words.
+  </span>
+  </div>
+</div>
+<div class="photos">
+  <div class="container">
+    <div class="photos-container">
+      <ng-container  *ngFor="let photo of photos">
+        <gallery-item [photos]="photos" [photo]="photo"></gallery-item>
+      </ng-container>
+    </div>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 .gallery {
   background: url('../../assets/1.jpeg') no-repeat center center;
   background-size: cover;
-  height: 60vh;
+  height: 40vh;
   width: 100%;
   display: flex;
   color: #fff;
@@ -12,7 +12,7 @@
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 5;
-  margin-top: 45px;
+  margin: 45px 0 0;
   @media (max-width: 768px) {
     margin-top: 70px;
   }
@@ -79,10 +79,35 @@
   }
 }
 
-.photos-container {
+.photo-quote {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-
+  align-items: center;
+  text-align: right;
+  font: 400 1.3rem/1.5 'PT Serif Caption', serif;
+  padding: 65px;
 }
+
+.photos {
+  background-color: #222;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.025) 10%, transparent 0),
+    linear-gradient(#222, #7e7b7b);
+  background-size: .75em 100%, 100% 100%;
+  background-attachment: fixed;
+  align-items: center;
+  padding: 190px 0;
+  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+  @media (max-width: 768px) {
+    clip-path: polygon(0 5%, 100% 0%, 100% 98%, 0% 100%);
+  }
+
+  .photos-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+}
+

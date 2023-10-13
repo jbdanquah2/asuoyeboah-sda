@@ -1,5 +1,7 @@
 .quotes {
   background-color: #f6f9fb ;
+  clip-path: polygon(1% 0, 54% 11%, 100% 0, 100% 62%, 100% 100%, 45% 100%, 1% 100%, 0 35%, 0 11%);
+  padding: 95px 0;
 }
 .bible-quotes {
   margin: 0 auto;
@@ -28,7 +30,7 @@
     align-items: center;
     justify-content: center;
     width: 60%;
-    padding-left: 20px;
+    padding-left: 90px;
     @media (max-width: 768px) {
       text-align: center;
       border: none;

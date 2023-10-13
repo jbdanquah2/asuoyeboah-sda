@@ -16,19 +16,23 @@
   .card-p:nth-child(2),
   .card-p:nth-child(3),
   .card-p:nth-child(4) {
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 
 :host ::ng-deep .card-p:nth-child(2), .card-p:nth-child(4) {
-  border:  solid 2px #154472;
+  border-bottom:  solid 2px #154472;
   background-color: #ffffff;
 }
 
 .programs {
   position: relative;
-  margin-bottom: 80px;
-  border-bottom: solid 1px #e0e0e0;
+  //margin-bottom: 80px;
+  //padding-bottom: 80px;
+  //border-bottom: solid 1px #e0e0e0;
+  //background-color: rgba(17, 41, 79, 0.2);
+  //clip-path: inset(10% 10% 10% 10% round 20%, 20%);
+
 
   .display {
     display: flex;
