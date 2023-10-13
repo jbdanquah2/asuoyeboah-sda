@@ -86,6 +86,9 @@
   text-align: right;
   font: 400 1.3rem/1.5 'PT Serif Caption', serif;
   padding: 65px;
+  &.b {
+    padding: 85px 65px;
+  }
 }
 
 .photos {

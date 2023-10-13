@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
@@ -189,6 +189,21 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (!this.showImage || event.key === 'Escape') {
+        this.showImage = false;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      this.showPreviousImage();
+      event.preventDefault();
+    } else if (event.key === 'ArrowRight') {
+      this.showNextImage();
+      event.preventDefault();
+    }
   }
 
   toggleImageView(idx: number = 0, check: boolean = false) {

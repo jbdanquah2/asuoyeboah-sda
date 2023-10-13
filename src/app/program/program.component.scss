@@ -1,7 +1,7 @@
 .card-p:nth-child(n) {
   position: relative;
-  top: -120px;
-  margin-top: 10px;
+  top: -40px;
+  //margin-top: 10px;
   border-radius: 6px;
 }
 .card-p:nth-child(1),
@@ -27,12 +27,6 @@
 
 .programs {
   position: relative;
-  //margin-bottom: 80px;
-  //padding-bottom: 80px;
-  //border-bottom: solid 1px #e0e0e0;
-  //background-color: rgba(17, 41, 79, 0.2);
-  //clip-path: inset(10% 10% 10% 10% round 20%, 20%);
-
 
   .display {
     display: flex;
