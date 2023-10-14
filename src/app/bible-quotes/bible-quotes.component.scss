@@ -1,8 +1,14 @@
 .quotes {
   background-color: #f6f9fb ;
-  //clip-path: polygon(1% 0, 54% 11%, 100% 0, 100% 62%, 100% 100%, 45% 100%, 1% 100%, 0 35%, 0 11%);
-  clip-path: polygon(51% 10%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0 80%, 0 1%);
+  //clip-path: polygon(51% 10%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0 80%, 0 1%);
   padding: 95px 0;
+  //border-top: solid 1px #11294f;
+
+  .quote-wrapper .titles {
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
 }
 .bible-quotes {
   margin: 0 auto;
@@ -12,11 +18,11 @@
   justify-content: center;
   min-height: 610px;
   width: 100%;
-  background: url("../../assets/bg-3.png") no-repeat center left;
+  background: url("../../assets/bg-3.png") no-repeat right top;
   font-family:  Inter, sans-serif;
   color: #ffffff;
   padding: 25px 0;
-  z-index: 99;
+
   position: relative;
   @media (max-width: 768px) {
     width: 100%;
@@ -31,7 +37,7 @@
     align-items: center;
     justify-content: center;
     width: 60%;
-    padding-left: 90px;
+    padding-right: 90px;
     @media (max-width: 768px) {
       text-align: center;
       border: none;

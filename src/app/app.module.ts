@@ -22,6 +22,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { AdminComponent } from './admin/admin.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LeadersComponent } from './leaders/leaders.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     GalleryItemComponent,
     AdminComponent,
     AboutUsComponent,
+    LeadersComponent,
   ],
     imports: [
       BrowserModule,

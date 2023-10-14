@@ -1,0 +1,15 @@
+<div class="image-viewer" >
+  <div class="image-container">
+    <ng-container *ngFor="let photo of photos.slice(nextIndex); let idx=index">
+      <img class="img-fluid img-thumbnail" [src]="photo.imageUrl" alt="Image"/>
+      <!--    <div class="image-caption">-->
+      <!--      <p>{{photo.caption}}jhkj</p>-->
+      <!--    </div>-->
+    </ng-container>
+  </div>
+  <div>
+    <button class="prev-button">&#8249; </button>
+    <button class="next-button"> &#8250;</button>
+  </div>
+</div>
+
