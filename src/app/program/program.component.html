@@ -1,14 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col programs">
-      <div class="display">
-        <ng-container *ngFor="let event of events; let i=index">
-          <program-card class='card-p' [event]="event"></program-card>
-        </ng-container>
+<div class="row">
+    <div class="container">
+        <div class="col programs">
+          <div class="display">
+            <ng-container *ngFor="let event of events; let i=index">
+              <program-card class='card-p' [event]="event"></program-card>
+            </ng-container>
+          </div>
+          <!--    <span class="text-bg-primary material-symbols-outlined prev">navigate_before</span>-->
+          <!--    <span class="text-bg-primary material-symbols-outlined next">navigate_next</span>-->
+        </div>
       </div>
-      <!--    <span class="text-bg-primary material-symbols-outlined prev">navigate_before</span>-->
-      <!--    <span class="text-bg-primary material-symbols-outlined next">navigate_next</span>-->
-    </div>
+  <div class="top-line">.
   </div>
 </div>
 
