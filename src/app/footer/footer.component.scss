@@ -1,30 +1,24 @@
 .footer {
   background-color: #11294f;
-  //margin: 150px 0 0 auto;
-
   .social-media {
     padding: 15px
   }
-
-
   .church-desc {
     color: #fff;
     font-size: 1.2rem;
   }
-
   .footer-contact {
     margin-top: 35px;
-
     @media (max-width: 768px) {
       margin-top: 90px;
     }
-
-  }
-
-
-  .copyright {
-    background-color: #2F557F;
-    width: 100%;
   }
 }
-
+.copyright {
+  color: #f6f9fb;
+  background-color: #2F557F;
+  width: 100%;
+  a {
+    color: #f6f9fb;
+  }
+}

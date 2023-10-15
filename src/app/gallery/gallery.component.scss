@@ -87,8 +87,12 @@
   font-size: 1.5rem;
   font-weight: 400;
   padding: 65px;
-  &.b {
-    padding: 85px 65px;
+  .quote {
+    .material-symbols-outlined {
+      font-size: 1.6rem;
+      margin-right: 3px;
+      color: rgba(217, 164, 41, 0.8);
+    }
   }
 }
 

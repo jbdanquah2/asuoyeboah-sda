@@ -1,62 +1,26 @@
 .pastoral-msg {
   display: flex;
   padding:120px 0 0 0;
+  color: #11294f;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     padding: 135px 20px 0;
-
   }
-
   .pastor {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-
     img {
       border-radius: 50%;
-
     }
   }
-
   .msg {
     font-size: 1.2rem;
     padding: 75px 0;
     p {
       padding: 10px 0;
-
     }
   }
 }
-
-//.pastoral-msg {
-//  display: flex;
-//  justify-content: center;
-//  padding: 150px 0;
-//
-//  card.pastor {
-//    display: flex;
-//    width: 100%;
-//    align-items: center;
-//    justify-content: center;
-//  }
-//
-//  .card-body.image {
-//    text-align: center;
-//
-//    img {
-//      border-radius: 50%;
-//    }
-//  }
-//  .card-title {
-//    text-align: center;
-//  }
-//  .card.msg .card-body .card-text {
-//    padding: 20px 0;
-//  }
-//
-//}
-//.card {
-//  border: 0;
-//}

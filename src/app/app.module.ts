@@ -23,6 +23,7 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { AdminComponent } from './admin/admin.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LeadersComponent } from './leaders/leaders.component';
+import { LeaderCardComponent } from './leader-card/leader-card.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LeadersComponent } from './leaders/leaders.component';
     AdminComponent,
     AboutUsComponent,
     LeadersComponent,
+    LeaderCardComponent,
   ],
     imports: [
       BrowserModule,

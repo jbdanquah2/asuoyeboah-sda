@@ -1,10 +1,7 @@
 <div class="image-viewer" >
   <div class="image-container">
     <ng-container *ngFor="let photo of photos.slice(nextIndex); let idx=index">
-      <img class="img-fluid img-thumbnail" [src]="photo.imageUrl" alt="Image"/>
-      <!--    <div class="image-caption">-->
-      <!--      <p>{{photo.caption}}jhkj</p>-->
-      <!--    </div>-->
+      <leader-card [photo]="photo"></leader-card>
     </ng-container>
   </div>
   <div>
