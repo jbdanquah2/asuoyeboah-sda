@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'gallery-item',
@@ -13,8 +13,8 @@ export class GalleryItemComponent {
   @Input()
   idx: number = 0;
 
-  @Input()
-  photos: any;
+  pic: any;
+
 
 
 
@@ -22,7 +22,9 @@ export class GalleryItemComponent {
 
   }
 
-  openSlider() {
+  // ngOnInit(): void {
+  //   this.pic = this.photo;
+  //   console.log('hiiii',this.pic);
+  // }
 
-  }
 }

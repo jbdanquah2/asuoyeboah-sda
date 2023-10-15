@@ -24,6 +24,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LeadersComponent } from './leaders/leaders.component';
 import { LeaderCardComponent } from './leader-card/leader-card.component';
+import { TextEditorComponent } from './text-editor/text-editor.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { LeaderCardComponent } from './leader-card/leader-card.component';
     AboutUsComponent,
     LeadersComponent,
     LeaderCardComponent,
+    TextEditorComponent,
   ],
     imports: [
       BrowserModule,

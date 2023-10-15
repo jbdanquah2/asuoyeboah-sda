@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AboutUsComponent {
 
+  constructor() {
+  }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
 }

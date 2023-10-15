@@ -188,6 +188,7 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
 
   }
 
