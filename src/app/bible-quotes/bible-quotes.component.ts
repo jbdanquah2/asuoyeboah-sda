@@ -30,7 +30,6 @@ export class BibleQuotesComponent implements OnInit {
             if (!data) {
                return;
             }
-            console.log('###data', data);
             this.randomBibleQuote = data.length !== 1 ? this.randomBibleQuote : data[0];
           })
         )
