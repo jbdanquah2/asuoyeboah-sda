@@ -16,7 +16,7 @@ export class BibleQuotesService {
         'Access-Control-Allow-Origin': '*',
       })
     };
-   return this.http.get(environment.api.getRandomBibleQuotes, httpOptions)
+   return this.http.get(environment.api.getRandomBibleQuotes)
      .pipe(
        map((data: any) => {
          if (!data) {
