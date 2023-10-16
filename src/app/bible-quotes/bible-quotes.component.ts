@@ -34,7 +34,7 @@ export class BibleQuotesComponent implements OnInit {
           })
         )
         .subscribe()
-    }, 10000)
+    }, 15000)
 
   }
 }
