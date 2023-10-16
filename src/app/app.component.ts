@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {SymbolLoaderService} from "./services/google-symbols-loader.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ export class AppComponent implements OnInit{
   title = 'Asuoyeboa SDA';
 
 
-  constructor(public symbolLoaderService: SymbolLoaderService) {
+  constructor() {
   }
 
   ngOnInit() {

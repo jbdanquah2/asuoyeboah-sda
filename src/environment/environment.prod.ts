@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: "AIzaSyAgjb4ryUpmmKQWIPvH1YfrvLIy33arKCM",
     authDomain: "asuoyeboah-sda.firebaseapp.com",
@@ -10,7 +10,6 @@ export const environment = {
   },
   api: {
     getRandomBibleQuotes: 'https://labs.bible.org/api/?passage=random&type=json&formatting=full'
-    // getRandomBibleQuotes: 'https://bible-api.com/?random=verse'
   }
 };
 

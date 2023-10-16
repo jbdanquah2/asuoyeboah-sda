@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AuthService} from "../services/auth.service";
+
 
 @Component({
   selector: 'app-admin',
@@ -25,11 +28,16 @@ export class AdminComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
 
+  }
+
+  async createNewEvent() {
+    // const eventId = this.db.createId()
+    // return  await this.db.doc(`programs/${eventId}`).set(this.event);
   }
 
 

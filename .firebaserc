@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "asuoyeboah-sda"
+  },
+  "targets": {
+    "asuoyeboah-sda": {
+      "hosting": {
+        "asuoyeboa_sda": [
+          "asuoyeboah-sda"
+        ]
+      }
+    }
   }
 }

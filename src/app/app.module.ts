@@ -13,10 +13,6 @@ import { BibleQuotesComponent } from './bible-quotes/bible-quotes.component';
 import {NgOptimizedImage} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {BibleQuotesService} from "./services/bible-quotes.service";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {AngularFireModule} from "@angular/fire/compat";
-import {environment} from "../environment/environment";
-import {SymbolLoaderService} from "./services/google-symbols-loader.service";
 import { PastoralMessageComponent } from './pastoral-message/pastoral-message.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
@@ -25,6 +21,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LeadersComponent } from './leaders/leaders.component';
 import { LeaderCardComponent } from './leader-card/leader-card.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireModule} from "@angular/fire/compat";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { environment } from '../environment/environment';
+
 
 @NgModule({
   declarations: [
@@ -47,12 +49,17 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
   ],
     imports: [
       BrowserModule,
-      AngularFireModule.initializeApp(environment.firebase),
       AppRoutingModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFireAuthModule,
+      FormsModule,
+      ReactiveFormsModule,
+      NoopAnimationsModule,
       NgOptimizedImage,
-      HttpClientModule
+      HttpClientModule,
+
     ],
-  providers: [BibleQuotesService, SymbolLoaderService],
+  providers: [BibleQuotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

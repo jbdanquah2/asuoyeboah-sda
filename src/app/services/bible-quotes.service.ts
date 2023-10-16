@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {environment} from "../../environment/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map, Observable, tap} from "rxjs";
 import {BibleQuoteModel} from "../models/bible-quote.model";
 
@@ -11,7 +11,12 @@ export class BibleQuotesService {
   }
 
   getRandomBibleQuote(): Observable<BibleQuoteModel[]> {
-   return this.http.get(environment.api.getRandomBibleQuotes)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*',
+      })
+    };
+   return this.http.get(environment.api.getRandomBibleQuotes, httpOptions)
      .pipe(
        map((data: any) => {
          if (!data) {
