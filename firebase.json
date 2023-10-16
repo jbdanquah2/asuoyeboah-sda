@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist/asuoyeboa_sda",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -13,7 +13,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "asuoyeboa_sda/index.html"
+        "destination": "/index.html"
       }
     ]
   },
