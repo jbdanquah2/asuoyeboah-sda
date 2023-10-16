@@ -26,6 +26,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { environment } from '../environment/environment';
+import { AlbumComponent } from './album/album.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { environment } from '../environment/environment';
     LeadersComponent,
     LeaderCardComponent,
     TextEditorComponent,
+    AlbumComponent,
   ],
     imports: [
       BrowserModule,

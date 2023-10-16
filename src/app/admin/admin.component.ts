@@ -28,7 +28,7 @@ export class AdminComponent implements OnInit {
   }
 
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private db: AngularFirestore) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
