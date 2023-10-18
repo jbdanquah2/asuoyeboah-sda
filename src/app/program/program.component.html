@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col programs">
       <div class="display">
-        <ng-container *ngFor="let event of events; let i=index">
-          <program-card class='card-p' [event]="event"></program-card>
+        <ng-container *ngFor="let program of programs; let i=index">
+          <program-card class='card-p' [program]="program"></program-card>
         </ng-container>
       </div>
     </div>

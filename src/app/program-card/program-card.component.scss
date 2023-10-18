@@ -6,15 +6,34 @@
   color: #11294f;
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
   @media (max-width: 300px) {
       width: 100%;
     }
   &:hover {
     cursor: pointer;
+    opacity: 0.7;
   }
   .card-header {
     font-weight: 500;
     border-bottom: none;
+    display: flex;
+    justify-content: space-around;
+
+    .ifActive {
+      color: #2a4f81!important;
+    }
+    .ifInactive {
+      color: #e02997 !important;
+    }
+    .delete {
+      margin-left: 50px;
+      margin-bottom: 0;
+      font-size: 1.4rem;
+      &:hover {
+        color: #e02997 !important;
+      }
+    }
   }
   .card-title {
     font-size: 1.5rem;

@@ -1,14 +1,20 @@
 <div class="card text-center">
+  <div *ngIf="isAdmin" class="card-header">
+    <span [ngClass]="[program.status == 'inactive'? 'ifInactive' : 'ifActive']" >{{program.status}}</span>
+    <span (click)="delete($event)" class="material-symbols-outlined delete" >delete_forever</span>
+  </div>
+
   <h5 class="card-title card-header">
     <span class="material-symbols-outlined">event_available</span>
-    {{event.title}}</h5>
+    {{program.title}}</h5>
   <div class="card-body">
-    <p class="card-text">{{event.description}}</p>
+    <p class="card-text">{{program.description}}</p>
   </div>
   <div class="card-footer py-4">
     <span class="material-symbols-outlined">schedule</span>
-    {{nextDate}}
+    {{nextDate}} | {{program.time}}
   </div>
+
 </div>
 
 

@@ -7,20 +7,29 @@
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-      <program-card [event]="event"></program-card>
-      <span  class="material-symbols-outlined add">add_circle</span>
+    <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="program">
+        <ng-container *ngFor="let program of programs">
+          <div class="wrapper">
+            <program-card (deleteProgram)="deleteProgram($event)" [isAdmin]="true" (click)="onViewProgram(program)" [program]="program"></program-card>
+          </div>
+        </ng-container>
+      </div>
+      <span (click)="openCreateNewProgram()" class="material-symbols-outlined add">add_circle</span>
     </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="tab-pane fade gallery" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
       <gallery-item [photo]="photo"></gallery-item>
       <span class="material-symbols-outlined add">add_circle</span>
     </div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="tab-pane fade message" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
       <div class="pastor">
         <img class="img-fluid" width="350" src="../../assets/pastor.png">
         <text-editor></text-editor>
       </div>
       <span class="material-symbols-outlined add">add_circle</span>
     </div>
+    <popup-modal *ngIf="isViewerOpen" icon="task_alt" title="Program"  (closeModal)="closeViewer($event)">
+      <viewer [showFooter]="true" (saveData)="onEditProgram($event)" [item]="currentItem"></viewer>
+    </popup-modal>
   </div>
 </div>

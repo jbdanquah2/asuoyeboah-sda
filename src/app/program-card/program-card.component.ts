@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'program-card',
@@ -8,7 +8,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ProgramCardComponent implements OnInit{
 
   @Input()
-  event: any;
+  isAdmin: boolean = false;
+
+  @Input()
+  program: any;
+
+  @Output()
+  deleteProgram: EventEmitter<any> = new EventEmitter<any>();
 
   nextDate: any;
 
@@ -21,9 +27,11 @@ export class ProgramCardComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log('events', this.event)
+    console.log('program', this.program)
 
-    this.nextDate = this.getNextDate(this.event.order);
+    this.nextDate = this.getNextDate(this.program.order);
+
+    this.nextDate = this.program.isPrime ? this.nextDate : this.formatDate(new Date(this.program.date));
   }
 
   getNextDate(order: number): any {
@@ -35,14 +43,21 @@ export class ProgramCardComponent implements OnInit{
 
     nextDate.setDate(today.getDate() + daysUntilNext);
 
-    const dayOfWeek = this.days[nextDate.getDay()];
-    const day = nextDate.getDate();
-    const month = this.months[nextDate.getUTCMonth()];
-    const year = nextDate.getFullYear();
-
-    return `${dayOfWeek}, ${day} ${month} ${year}`;
+    return this.formatDate(nextDate);
   }
 
+  formatDate(date: any) {
 
+    const dayOfWeek = this.days[date.getDay()];
+    const day = date.getDate();
+    const month = this.months[date.getUTCMonth()];
+    const year = date.getFullYear();
 
+    return `${dayOfWeek}, ${day} ${month} ${year}`
+  }
+
+  delete(event: any) {
+    event.stopPropagation();
+    this.deleteProgram.emit(this.program);
+  }
 }

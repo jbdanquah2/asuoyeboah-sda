@@ -21,12 +21,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LeadersComponent } from './leaders/leaders.component';
 import { LeaderCardComponent } from './leader-card/leader-card.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
-import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireModule} from "@angular/fire/compat";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { environment } from '../environment/environment';
 import { AlbumComponent } from './album/album.component';
+import {AuthService} from "./services/auth.service";
+import {LoginComponent} from "./login/login.component";
+import {LoadingComponent} from "./shared/loading/loading.component";
+import {ViewerComponent} from "./viewer/viewer.component";
+import {PopupModalComponent} from "./popup-modal/popup-modal.component";
 
 
 @NgModule({
@@ -48,6 +53,10 @@ import { AlbumComponent } from './album/album.component';
     LeaderCardComponent,
     TextEditorComponent,
     AlbumComponent,
+    LoginComponent,
+    LoadingComponent,
+    ViewerComponent,
+    PopupModalComponent
   ],
     imports: [
       BrowserModule,

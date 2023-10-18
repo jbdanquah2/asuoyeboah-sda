@@ -1,6 +1,13 @@
 .admin {
   margin-top: 100px;
   height: 100vh;
+  .program {
+    display: flex;
+    flex-wrap: wrap;
+    .wrapper {
+      margin: 30px 5px;
+    }
+  }
   .tab-pane {
     .card {
       width: 300px;

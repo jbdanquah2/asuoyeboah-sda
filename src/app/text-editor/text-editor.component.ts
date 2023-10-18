@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
-import Quill from 'quill';
-import * as QuillNamespace from 'quill';
+// import Quill from 'quill';
+// import * as QuillNamespace from 'quill';
 
 @Component({
   selector: 'text-editor',
@@ -8,7 +8,7 @@ import * as QuillNamespace from 'quill';
   styleUrls: ['./text-editor.component.scss']
 })
 export class TextEditorComponent implements AfterViewInit {
-  editor: Quill | null = null;
+  // editor: Quill | null = null;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -31,7 +31,7 @@ export class TextEditorComponent implements AfterViewInit {
         }
       };
 
-      this.editor = new Quill(editorElement, editorOptions);
+      // this.editor = new Quill(editorElement, editorOptions);
   }
 
 }

@@ -1,0 +1,40 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2>
+        <ng-container *ngIf="icon">
+                    <span class="material-symbols-outlined" [style.margin-right.px]="icon ? 8 : 0">
+                        {{icon}}
+                    </span>
+        </ng-container>
+        <ng-container *ngIf="iconUrl">
+          <img [src]="iconUrl" alt="icon-url" />
+        </ng-container>
+        {{ title }}
+      </h2>
+      <button class="close-button" (click)="close()">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+      </button>
+    </div>
+    <div class="modal-content">
+      <!-- Add custom content here -->
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="showFooter" class="modal-footer">
+<!--      <button (click)="close()" class="close-btn">-->
+<!--          <span class="material-symbols-outlined">-->
+<!--            close-->
+<!--          </span>-->
+<!--        Close-->
+<!--      </button>-->
+      <button (click)="save()" class="save-btn">
+          <span class="material-symbols-outlined">
+            save
+          </span>
+        Save
+      </button>
+    </div>
+  </div>
+</div>

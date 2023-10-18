@@ -1,0 +1,23 @@
+<div [formGroup]="form" class="task-viewer">
+  <input type="text" class="title" formControlName="title" placeholder="title of program">
+  <textarea spellcheck="true" rows="4" formControlName="description" placeholder="Program description"></textarea>
+  <select formControlName="status" class="btn btn-primary category">
+    <option disabled value="0">Select status</option>
+    <option value="active">Active</option>
+    <option value="inactive">Inactive</option>
+  </select>
+  <div>
+    <div class="date">
+      <input class="btn btn-outline-primary my-4" formControlName="date" type="date">
+    </div>
+    <div class="time">
+      <input class="btn btn-outline-primary" formControlName="time" type="time">
+    </div>
+  </div>
+  <div *ngIf="showFooter" class="modal-footer">
+    <button (click)="onSave(form)"  class="btn btn-primary">
+      <span class="material-symbols-outlined">save</span>
+      Save
+    </button>
+  </div>
+</div>

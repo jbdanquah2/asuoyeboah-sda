@@ -13,11 +13,12 @@ export class AuthService {
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   public isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
 
-  private showLoginButtonSubject = new BehaviorSubject<boolean>(true);
+  private showLoginButtonSubject = new BehaviorSubject<boolean>(false);
   showLoginButton$ = this.showLoginButtonSubject.asObservable();
 
   constructor(private afAuth: AngularFireAuth,
-              private router: Router) {
+              private router: Router,
+              private db: AngularFirestore) {
 
     this.afAuth.authState.subscribe((user) => {
 
@@ -26,7 +27,7 @@ export class AuthService {
 
       if (isAuthenticated) {
         console.log('AuthService: User is logged in', user?.email, user?.displayName);
-        from(this.router.navigate(['/task-list'])).subscribe();
+        from(this.router.navigate(['/admin'])).subscribe();
       }
     });
   }
@@ -45,7 +46,7 @@ export class AuthService {
 
   async signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    return this.afAuth.signInWithPopup(provider);
+    return this.afAuth['signInWithPopup'](provider);
   }
 
   signOut() {
@@ -56,15 +57,15 @@ export class AuthService {
     return this.afAuth.createUserWithEmailAndPassword(email, password);
   }
 
-  // async addUserToDatabase(user: any) {
-  //   const data: User = {
-  //     id: user.uid,
-  //     email: user.email,
-  //     displayName: user.displayName,
-  //     photoURL: user.photoURL,
-  //     emailVerified: user.emailVerified,
-  //   }
-  //   return await this.db.firestore.doc(`users/${data.id}`).set(data)
-  // }
+  async addUserToDatabase(user: any) {
+    const data: User = {
+      id: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified,
+    }
+    return await this.db.firestore.doc(`users/${data.id}`).set(data)
+  }
 
 }
