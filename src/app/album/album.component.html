@@ -1,1 +1,11 @@
-<p>album works!</p>
+<div class="card" style="width: 18rem;">
+  <img [src]="imageUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">{{album.title}}</p>
+<!--    <div *ngIf="isAdmin" class="action">-->
+<!--      <span [ngClass]="[album?.status == 'inactive'? 'ifInactive' : 'ifActive']" >{{album?.status || 'active'}}</span>-->
+<!--      <span  class="material-symbols-outlined delete" >delete_forever</span>-->
+<!--    </div>-->
+  </div>
+
+</div>

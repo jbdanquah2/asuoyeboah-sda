@@ -2,10 +2,13 @@ import {Component, OnInit, Output} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AuthService} from "../services/auth.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {noop} from "rxjs";
+import {forkJoin, noop, Observable, of} from "rxjs";
 import {LoadingService} from "../shared/services/loading.service";
 import {ProgramService} from "../services/program.service";
 import {Program} from "../models/program.model";
+import {AlbumService} from "../services/album.service";
+import {catchError} from "rxjs/operators";
+import {Album} from "../models/album.model";
 
 
 @Component({
@@ -34,14 +37,29 @@ export class AdminComponent implements OnInit {
 
   showConfirmDialog: boolean = false;
 
+  albums: any[] = [];
+
+  showAlbums: boolean = true;
+
+  currentAlbum: Album = {} as Album;
+
+  photosByAlbumId: any[] = [];
+
   constructor(private afs:AngularFireAuth,
               private db: AngularFirestore,
               private loading: LoadingService,
-              private programService: ProgramService) { }
+              private programService: ProgramService,
+              private albumService: AlbumService) { }
 
   ngOnInit(): void {
 
     window.scrollTo(0, 0);
+
+    this.albumService.getAlbums()
+      .subscribe((albums: any[]) => {
+        this.albums = albums;
+        console.log('albums', this.albums);
+      });
 
    this.programService.getAllRealTimePrograms()
      .subscribe((programs: any[]) => {
@@ -50,6 +68,7 @@ export class AdminComponent implements OnInit {
      });
   }
 
+  // PROGRAMS
   onViewProgram(program: any) {
     this.currentItem = program;
     this.isViewerOpen = true;
@@ -66,7 +85,6 @@ export class AdminComponent implements OnInit {
     const programId = this.db.createId()
     return  await this.db.doc(`programs/${programId}`).set(program);
   }
-
 
   async updateProgram(changes: any) {
     console.log('##changes', changes)
@@ -87,9 +105,8 @@ export class AdminComponent implements OnInit {
     this.currentItem = event;
     this.isViewerOpen = false;
 
-    setTimeout(() => {
-      this.loading.loadingOff();
-    }, 500)
+    this.loading.loadingOff();
+
 
   }
 
@@ -107,10 +124,34 @@ export class AdminComponent implements OnInit {
     await this.programService.deleteProgram(this.currentItem.id);
 
     console.log('program deleted');
-    
+
     this.showConfirmDialog = false;
 
     this.loading.loadingOff();
+  }
+
+  // GALLERY
+
+  async onViewAlbum(album: any) {
+    this.showAlbums = false;
+    this.currentAlbum = album;
+
+    this.photosByAlbumId = await this.getPhotosByAlbumId(album.id);
+    console.log('<<<>>photosByAlbumId', this.photosByAlbumId);
+  }
+
+  async getPhotosByAlbumId(albumId: string): Promise<any> {
+    const photoRef = await this.db.firestore
+      .collection(`photos/`)
+      .where('albumId', '==', albumId)
+      .get();
+
+    return photoRef.docs.map((snap) => {
+      return {
+        id: snap.id,
+        ...(<any>snap.data()),
+      };
+    })
   }
 
   openConfirmDialog(program: Program) {

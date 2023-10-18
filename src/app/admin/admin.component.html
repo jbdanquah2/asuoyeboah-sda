@@ -18,7 +18,20 @@
       <span (click)="openCreateNewProgram()" class="material-symbols-outlined add">add_circle</span>
     </div>
     <div class="tab-pane fade gallery" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <gallery-item [photo]="photo"></gallery-item>
+<!--      <gallery-item [photo]="photo"></gallery-item>-->
+      <div class="program">
+        <ng-container *ngIf="showAlbums">
+          <ng-container *ngFor="let album of albums">
+            <album (click)="onViewAlbum(album)"  [album]="album"></album>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="!showAlbums">
+          <ng-container *ngFor="let photo of photosByAlbumId">
+            <gallery-item [photo]="photo"></gallery-item>
+          </ng-container>
+        </ng-container>
+      </div>
       <span class="material-symbols-outlined add">add_circle</span>
     </div>
     <div class="tab-pane fade message" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">

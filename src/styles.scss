@@ -46,4 +46,18 @@ a {
   text-align: center;
 }
 
+.ifActive {
+  color: #2a4f81!important;
+}
+.ifInactive {
+  color: #e02997 !important;
+}
+.delete {
+  margin-left: 50px;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  &:hover {
+    color: #e02997 !important;
+  }
+}
 

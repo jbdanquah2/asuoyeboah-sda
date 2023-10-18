@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {DatePipe} from "@angular/common";
+import {formatAMTime} from "../utils";
 
 @Component({
   selector: 'program-card',
@@ -26,7 +28,7 @@ export class ProgramCardComponent implements OnInit{
 
   days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  constructor() {
+  constructor(private datePipe: DatePipe) {
 
   }
 
@@ -58,6 +60,10 @@ export class ProgramCardComponent implements OnInit{
     const year = date.getFullYear();
 
     return `${dayOfWeek}, ${day} ${month} ${year}`
+  }
+
+  formatTime(time: any) {
+    return formatAMTime(time)
   }
 
   delete(event: any) {

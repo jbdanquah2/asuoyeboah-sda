@@ -10,7 +10,7 @@ import { ProgramCardComponent } from './program-card/program-card.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { HomeComponent } from './home/home.component';
 import { BibleQuotesComponent } from './bible-quotes/bible-quotes.component';
-import {NgOptimizedImage} from "@angular/common";
+import {DatePipe, NgOptimizedImage} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {BibleQuotesService} from "./services/bible-quotes.service";
 import { PastoralMessageComponent } from './pastoral-message/pastoral-message.component';
@@ -33,6 +33,7 @@ import {LoadingComponent} from "./shared/loading/loading.component";
 import {ViewerComponent} from "./viewer/viewer.component";
 import {PopupModalComponent} from "./popup-modal/popup-modal.component";
 import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
+import { ViewAlbumComponent } from './view-album/view-album.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component"
     LoadingComponent,
     ViewerComponent,
     PopupModalComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    ViewAlbumComponent
   ],
     imports: [
       BrowserModule,
@@ -72,7 +74,7 @@ import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component"
       HttpClientModule,
 
     ],
-  providers: [BibleQuotesService],
+  providers: [BibleQuotesService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
