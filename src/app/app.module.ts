@@ -32,6 +32,7 @@ import {LoginComponent} from "./login/login.component";
 import {LoadingComponent} from "./shared/loading/loading.component";
 import {ViewerComponent} from "./viewer/viewer.component";
 import {PopupModalComponent} from "./popup-modal/popup-modal.component";
+import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import {PopupModalComponent} from "./popup-modal/popup-modal.component";
     LoginComponent,
     LoadingComponent,
     ViewerComponent,
-    PopupModalComponent
+    PopupModalComponent,
+    ConfirmDialogComponent
   ],
     imports: [
       BrowserModule,

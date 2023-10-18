@@ -11,7 +11,7 @@
       <div class="program">
         <ng-container *ngFor="let program of programs">
           <div class="wrapper">
-            <program-card (deleteProgram)="deleteProgram($event)" [isAdmin]="true" (click)="onViewProgram(program)" [program]="program"></program-card>
+            <program-card (deleteProgram)="openConfirmDialog(program)" [isAdmin]="true" (click)="onViewProgram(program)" [program]="program"></program-card>
           </div>
         </ng-container>
       </div>
@@ -31,5 +31,11 @@
     <popup-modal *ngIf="isViewerOpen" icon="task_alt" title="Program"  (closeModal)="closeViewer($event)">
       <viewer [showFooter]="true" (saveData)="onEditProgram($event)" [item]="currentItem"></viewer>
     </popup-modal>
+    <confirm-dialog *ngIf="showConfirmDialog"
+                    (closeConfirmDialog)="closeConfirm()"
+                    (confirm)="deleteProgram($event)"
+                    title="Confirm Choice" description="Are you sure you want to delete?">
+    </confirm-dialog>
   </div>
 </div>
+

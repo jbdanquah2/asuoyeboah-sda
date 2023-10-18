@@ -7,6 +7,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ProgramCardComponent implements OnInit{
 
+
+  @Input()
+  zIndex: string = '';
+
   @Input()
   isAdmin: boolean = false;
 

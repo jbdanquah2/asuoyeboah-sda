@@ -3,6 +3,7 @@
   height: 100vh;
   .program {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     .wrapper {
       margin: 30px 5px;
@@ -55,12 +56,20 @@
 
 
     .add {
-      position: absolute;
+      position: fixed;
       bottom: 60px;
       right: 90px;
       color: #007bff;
       cursor: pointer;
       font-size: 3.6rem;
+      background-color: #fefefe;
+      border-radius: 50%;
+      z-index: 99;
+      &:hover {}
+      @media (max-width: 768px) {
+        bottom: 15px;
+        right: 20px;
+      }
     }
   }
 }

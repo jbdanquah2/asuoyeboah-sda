@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AuthService} from "../services/auth.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
@@ -15,6 +15,9 @@ import {Program} from "../models/program.model";
 })
 export class AdminComponent implements OnInit {
 
+  @Output()
+  isAdminPage: boolean = false;
+
   isViewerOpen: boolean = false;
 
   currentItem: any = {};
@@ -28,6 +31,8 @@ export class AdminComponent implements OnInit {
   };
 
   programs!: any[];
+
+  showConfirmDialog: boolean = false;
 
   constructor(private afs:AngularFireAuth,
               private db: AngularFirestore,
@@ -48,6 +53,8 @@ export class AdminComponent implements OnInit {
   onViewProgram(program: any) {
     this.currentItem = program;
     this.isViewerOpen = true;
+
+    console.log('Admin: onViewProgram', this.currentItem)
   }
 
   openCreateNewProgram() {
@@ -86,14 +93,37 @@ export class AdminComponent implements OnInit {
 
   }
 
-  async deleteProgram(event:any) {
-    console.log('Admin: deleting program', this.currentItem)
-    event.stopPropagation();
-    return await this.programService.deleteProgram(this.currentItem.id)
+  async deleteProgram(event: any) {
+
+    this.showConfirmDialog = true;
+    this.loading.loadingOn()
+
+    if (!event) {
+      return;
+    }
+
+    console.log('Admin: deleting program', this.currentItem.id);
+
+    await this.programService.deleteProgram(this.currentItem.id);
+
+    console.log('program deleted');
+    
+    this.showConfirmDialog = false;
+
+    this.loading.loadingOff();
   }
 
+  openConfirmDialog(program: Program) {
+    this.currentItem = program;
+    this.showConfirmDialog = true;
+  }
 
   closeViewer($event: any) {
     this.isViewerOpen = false;
+  }
+
+  closeConfirm() {
+    this.showConfirmDialog = false;
+    this.loading.loadingOff();
   }
 }

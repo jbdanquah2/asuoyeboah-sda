@@ -3,7 +3,7 @@
     <div class="col programs">
       <div class="display">
         <ng-container *ngFor="let program of programs; let i=index">
-          <program-card class='card-p' [program]="program"></program-card>
+          <program-card [zIndex]="'zIndex'" class='card-p' [program]="program"></program-card>
         </ng-container>
       </div>
     </div>

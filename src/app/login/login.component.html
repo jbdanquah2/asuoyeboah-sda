@@ -1,17 +1,19 @@
-<div class="login-page" [formGroup]="form">
-  <h2>Login</h2>
+<div class="center-form">
+  <div class="login-page" [formGroup]="form">
+    <h2>Login</h2>
 
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email" required>
-  </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
 
-  <div class="form-group">
-    <label for="password">Password:</label>
-    <input type="password" id="password" formControlName="password" required>
-  </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required>
+    </div>
 
-  <div class="buttons">
-    <button class="btn" (click)="signInWithEmail()">Login</button>
+    <div class="buttons">
+      <button class="btn" (click)="signInWithEmail()">Login</button>
+    </div>
   </div>
 </div>

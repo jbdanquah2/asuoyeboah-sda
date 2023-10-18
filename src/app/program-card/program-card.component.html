@@ -1,4 +1,4 @@
-<div class="card text-center">
+<div class="card text-center {{zIndex}}">
   <div *ngIf="isAdmin" class="card-header">
     <span [ngClass]="[program.status == 'inactive'? 'ifInactive' : 'ifActive']" >{{program.status}}</span>
     <span (click)="delete($event)" class="material-symbols-outlined delete" >delete_forever</span>
@@ -14,7 +14,6 @@
     <span class="material-symbols-outlined">schedule</span>
     {{nextDate}} | {{program.time}}
   </div>
-
 </div>
 
 

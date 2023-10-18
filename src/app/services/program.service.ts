@@ -110,9 +110,9 @@ export class ProgramService {
 
   }
 
-  async deleteProgram(program: Partial<Program>) {
-    console.log('Delete program', program.id);
-    return await this.db.firestore.doc(`programs/${program.id}`).delete();
+  async deleteProgram(programId: string) {
+    console.log('Delete program',  `programs/${programId}`);
+    return await this.db.firestore.doc(`programs/${programId}`).delete();
   }
 
 
