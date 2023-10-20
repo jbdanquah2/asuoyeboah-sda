@@ -34,34 +34,36 @@ import {ViewerComponent} from "./viewer/viewer.component";
 import {PopupModalComponent} from "./popup-modal/popup-modal.component";
 import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
 import { ViewAlbumComponent } from './view-album/view-album.component';
+import {AddPhotoComponent} from "./add-photo/add-photo.component";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TopMenuComponent,
-    FooterComponent,
-    ProgramComponent,
-    ProgramCardComponent,
-    UserInputComponent,
-    HomeComponent,
-    BibleQuotesComponent,
-    PastoralMessageComponent,
-    GalleryComponent,
-    GalleryItemComponent,
-    AdminComponent,
-    AboutUsComponent,
-    LeadersComponent,
-    LeaderCardComponent,
-    TextEditorComponent,
-    AlbumComponent,
-    LoginComponent,
-    LoadingComponent,
-    ViewerComponent,
-    PopupModalComponent,
-    ConfirmDialogComponent,
-    ViewAlbumComponent
-  ],
+    declarations: [
+        AppComponent,
+        TopMenuComponent,
+        FooterComponent,
+        ProgramComponent,
+        ProgramCardComponent,
+        UserInputComponent,
+        HomeComponent,
+        BibleQuotesComponent,
+        PastoralMessageComponent,
+        GalleryComponent,
+        GalleryItemComponent,
+        AdminComponent,
+        AboutUsComponent,
+        LeadersComponent,
+        LeaderCardComponent,
+        TextEditorComponent,
+        AlbumComponent,
+        LoginComponent,
+        LoadingComponent,
+        ViewerComponent,
+        PopupModalComponent,
+        ConfirmDialogComponent,
+        ViewAlbumComponent,
+        AddPhotoComponent
+    ],
     imports: [
       BrowserModule,
       AppRoutingModule,

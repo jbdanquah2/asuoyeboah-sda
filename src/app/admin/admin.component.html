@@ -18,21 +18,23 @@
       <span (click)="openCreateNewProgram()" class="material-symbols-outlined add">add_circle</span>
     </div>
     <div class="tab-pane fade gallery" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-<!--      <gallery-item [photo]="photo"></gallery-item>-->
-      <div class="program">
-        <ng-container *ngIf="showAlbums">
-          <ng-container *ngFor="let album of albums">
-            <album (click)="onViewAlbum(album)"  [album]="album"></album>
+      <div class="album">
+        <button (click)="goBack()" class="btn" *ngIf="!showAlbums">Back</button>
+        <div class="program">
+          <ng-container *ngIf="showAlbums">
+            <ng-container *ngFor="let album of albums">
+              <album (click)="onViewAlbum(album)"  [album]="album"></album>
+            </ng-container>
           </ng-container>
-        </ng-container>
 
-        <ng-container *ngIf="!showAlbums">
-          <ng-container *ngFor="let photo of photosByAlbumId">
-            <gallery-item [photo]="photo"></gallery-item>
+          <ng-container *ngIf="!showAlbums">
+            <ng-container *ngFor="let photo of photosByAlbumId; let idx=index">
+              <gallery-item (click)="toggleImageView(idx)" [photo]="photo"></gallery-item>
+            </ng-container>
           </ng-container>
-        </ng-container>
+        </div>
       </div>
-      <span class="material-symbols-outlined add">add_circle</span>
+      <span (click)="openAddPhoto()" class="material-symbols-outlined add">add_circle</span>
     </div>
     <div class="tab-pane fade message" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
       <div class="pastor">
@@ -49,6 +51,24 @@
                     (confirm)="deleteProgram($event)"
                     title="Confirm Choice" description="Are you sure you want to delete?">
     </confirm-dialog>
+
+    <popup-modal *ngIf="isAddPhoto" icon="task_alt" title="Program"  (closeModal)="closeViewer($event)">
+      <add-photo [albums]="albums" [showFooter]="true"  [photo]="currentItem"></add-photo>
+    </popup-modal>
+    <confirm-dialog *ngIf="showConfirmDialog"
+                    (closeConfirmDialog)="closeConfirm()"
+                    (confirm)="deleteProgram($event)"
+                    title="Confirm Choice" description="Are you sure you want to delete?">
+    </confirm-dialog>
+
+  </div>
+</div>
+
+<div class="image-viewer" *ngIf="showImage">
+  <img class="img-fluid" [src]="photo.imageUrl" alt="Image" (click)="toggleImageView()"/>
+  <div>
+    <button class="prev-button" (click)="showPreviousImage()">&#8249; Prev</button>
+    <button class="next-button" (click)="showNextImage()">Next &#8250;</button>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, HostListener, OnInit, Output} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AuthService} from "../services/auth.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
@@ -44,6 +44,12 @@ export class AdminComponent implements OnInit {
   currentAlbum: Album = {} as Album;
 
   photosByAlbumId: any[] = [];
+
+  idx: number = 0;
+
+  showImage: boolean = false;
+
+  isAddPhoto: boolean = false;
 
   constructor(private afs:AngularFireAuth,
               private db: AngularFirestore,
@@ -106,8 +112,6 @@ export class AdminComponent implements OnInit {
     this.isViewerOpen = false;
 
     this.loading.loadingOff();
-
-
   }
 
   async deleteProgram(event: any) {
@@ -130,13 +134,13 @@ export class AdminComponent implements OnInit {
     this.loading.loadingOff();
   }
 
-  // GALLERY
-
+  // GALLERY/PHOTOS
   async onViewAlbum(album: any) {
+
     this.showAlbums = false;
     this.currentAlbum = album;
-
     this.photosByAlbumId = await this.getPhotosByAlbumId(album.id);
+
     console.log('<<<>>photosByAlbumId', this.photosByAlbumId);
   }
 
@@ -154,6 +158,60 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  toggleImageView(idx: number = 0, check: boolean = false) {
+
+
+    if (idx < 0) {
+      idx = this.photosByAlbumId.length - 1;
+    }
+    else if (idx > this.photosByAlbumId.length - 1) {
+      idx = 0;
+    }
+
+    console.log('current idx:', idx);
+
+    this.photo = this.photosByAlbumId[idx];
+
+    console.log('current photo:', this.photo)
+
+    if (!check) {
+      this.showImage = !this.showImage;
+    }
+
+    this.idx = idx;
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (!this.showImage || event.key === 'Escape') {
+      this.showImage = false;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      this.showPreviousImage();
+      event.preventDefault();
+    } else if (event.key === 'ArrowRight') {
+      this.showNextImage();
+      event.preventDefault();
+    }
+  }
+
+  showPreviousImage() {
+    this.toggleImageView(this.idx-1, true);
+  }
+
+  showNextImage() {
+    this.toggleImageView(this.idx+1, true);
+  }
+
+  openAddPhoto() {
+    this.isAddPhoto = true;
+
+  }
+
+
+
+
   openConfirmDialog(program: Program) {
     this.currentItem = program;
     this.showConfirmDialog = true;
@@ -161,10 +219,17 @@ export class AdminComponent implements OnInit {
 
   closeViewer($event: any) {
     this.isViewerOpen = false;
+    this.isAddPhoto = false;
   }
 
   closeConfirm() {
     this.showConfirmDialog = false;
     this.loading.loadingOff();
   }
+
+  goBack() {
+    this.showAlbums = true;
+  }
+
+
 }

@@ -1,0 +1,19 @@
+<div [formGroup]="form" class="task-viewer">
+  <img class="photo-preview" [src]="imagePreview">
+  <input type="text" class="btn title" formControlName="title" placeholder="Picture title">
+  <textarea class="btn" spellcheck="true" rows="2" formControlName="description" placeholder="Picture description"></textarea>
+  <select formControlName="albumId" class="btn btn-primary category">
+    <option selected value="0">Select Album</option>
+    <ng-container *ngFor="let album of albums">
+      <option [value]="album.id">{{album.title}}</option>
+    </ng-container>
+
+  </select>
+  <input class="btn file" type="file" (change)="onFileSelected($event)">
+  <div *ngIf="showFooter" class="modal-footer">
+    <button (click)="onSave(form)"  class="btn btn-primary">
+      <span class="material-symbols-outlined">save</span>
+      Save
+    </button>
+  </div>
+</div>

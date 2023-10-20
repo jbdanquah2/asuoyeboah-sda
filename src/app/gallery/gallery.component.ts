@@ -212,7 +212,7 @@ export class GalleryComponent implements OnInit {
     if (idx < 0) {
        idx = this.photos.length - 1;
     }
-    else if (idx >= this.photos.length - 1) {
+    else if (idx > this.photos.length - 1) {
       idx = 0;
     }
 
