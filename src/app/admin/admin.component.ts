@@ -205,6 +205,7 @@ export class AdminComponent implements OnInit {
   }
 
   openAddPhoto() {
+    this.currentItem = {};
     this.isAddPhoto = true;
 
   }

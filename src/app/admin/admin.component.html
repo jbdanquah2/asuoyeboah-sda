@@ -55,11 +55,11 @@
     <popup-modal *ngIf="isAddPhoto" icon="task_alt" title="Program"  (closeModal)="closeViewer($event)">
       <add-photo [albums]="albums" [showFooter]="true"  [photo]="currentItem"></add-photo>
     </popup-modal>
-    <confirm-dialog *ngIf="showConfirmDialog"
-                    (closeConfirmDialog)="closeConfirm()"
-                    (confirm)="deleteProgram($event)"
-                    title="Confirm Choice" description="Are you sure you want to delete?">
-    </confirm-dialog>
+<!--    <confirm-dialog *ngIf="showConfirmDialog"-->
+<!--                    (closeConfirmDialog)="closeConfirm()"-->
+<!--                    (confirm)="deleteProgram($event)"-->
+<!--                    title="Confirm Choice" description="Are you sure you want to delete?">-->
+<!--    </confirm-dialog>-->
 
   </div>
 </div>

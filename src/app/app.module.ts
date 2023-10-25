@@ -35,6 +35,7 @@ import {PopupModalComponent} from "./popup-modal/popup-modal.component";
 import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
 import { ViewAlbumComponent } from './view-album/view-album.component';
 import {AddPhotoComponent} from "./add-photo/add-photo.component";
+import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/compat/storage";
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import {AddPhotoComponent} from "./add-photo/add-photo.component";
       AppRoutingModule,
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireAuthModule,
+      AngularFireStorageModule,
       FormsModule,
       ReactiveFormsModule,
       NoopAnimationsModule,

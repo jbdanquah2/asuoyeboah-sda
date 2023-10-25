@@ -3,6 +3,9 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AuthService} from "../services/auth.service";
 import {Album} from "../models/album.model";
+import {NgxImageCompressService} from "ngx-image-compress";
+import {AngularFireStorage} from "@angular/fire/compat/storage";
+
 
 @Component({
   selector: 'add-photo',
@@ -34,7 +37,8 @@ export class AddPhotoComponent {
   imagePreview: string = '';
 
   constructor(private fb: FormBuilder,
-              private auth: AuthService) {
+              private auth: AuthService,
+              private storage: AngularFireStorage) {
 
   }
 
@@ -54,25 +58,28 @@ export class AddPhotoComponent {
   }
 
   onSave(form: any) {
-    console.log('viewer: change', form.value);
-    this.saveData.emit(form.value)
-  }
 
+    this.saveData.emit(form);
+
+  }
   onFileSelected(event: Event) {
+
     const input = event.target as HTMLInputElement;
-    console.log('input', input)
+
     const file = input.files?.[0];
-    console.log('file', file)
+
 
     if (file) {
       const reader = new FileReader();
 
-      reader.onload = () => {
+      reader.onload = async () => {
+
         this.imagePreview = reader.result as string;
-        console.log('imagePreview', this.imagePreview)
+
       }
+
       reader.readAsDataURL(file);
-      console.log('reader.readAsDataURL(file);', reader.readAsDataURL(file))
     }
   }
+
 }
